@@ -1,1 +1,27 @@
 Topic 4
+
+Gasoline not optimal for direct injection spray intake.
+
+Gasoline + 10 or 30 percent ethanal might be optimal for direct 
+ injection spray intake.
+
+Diesel Engines compression ratio ?
+
+certain fuels have more splashing ...
+
+prototype turbulence model: gas phase turbulence model not enough.
+  LES homogeneous assumptions not correct at the interface.
+
+  liquid behaves like a wall - cannot use LES.
+
+  one can use hybrid LES + RANS or WALE (Wall adaptive LE method)
+
+  WALE can be used at liquid-gas interface except that
+  the deforming liquid can force turbulence.
+
+  Test WALE model for channel flow.
+
+  cylindrical geometry?
+  square duct?
+
+  gas + ethanol contact line dynamics at high temperature (engine conditions)
