@@ -5,7 +5,7 @@ small spatial scales near the wall even without bubble formation and
 collapse, may limit the utility of the proposed approach if the speed 
 improvements associated with the coarsest levels cannot be achieved 
 over a significant portion of the tank domain.''
-
+-----------------------------------------------------------------------
 It is agreed that a practical number of adaptive mesh refinement levels
 will still yield a finest resolution level that still necessitates
 that sub-scale boundary layer models be used.  Our adaptive
@@ -25,29 +25,65 @@ Intl. J. Heat and Fluid Flow, 2015.
 c. ``A depletable micro-layer model for nucleate pool boiling,''
 Sato and Niceno, Journal of Computational Physics, 2015.
 
-d. Bicer and Sou
+d. ``Application of the improved cavitation model to turbulent cavitating
+flow in fuel injector nozzle,'' Bicer and Sou, Applied Mathematical
+Modelling, 2016.
 
-That being said, we have recently developed a very efficient 
+That being said, we are constantly improving our algorithm, and 
+we have recently developed a very efficient 
 ``super-mesh'' algorithm,
 
 ``A moment-of-fluid method for diffusion equations on irregular domains
 in multi-material systems,'' Y. Liu, M. Sussman, Y. Lian, M.Y. Hussaini,
 Journal of Computational Physics, Available online 23 October 2019,
 
-which will enable us to effortlessly introduce high aspect ratio supermesh
-elements into the thermal/boundary layer regions of a block structured
-rectangular adaptive mesh refinement grid.  Also, we have recently migrated
-from 2016 BoxLib to 2019 AMReX libraries which enables us to exploit a
+which will enable us to effortlessly introduce fine ``subscale'' resolution
+supermesh elements directly into the thermal/boundary layer regions of 
+a block structured rectangular adaptive mesh refinement grid.  Also, we 
+have recently migrated from the 2016 BoxLib libraries to the
+2019 AMReX libraries (BoxLib and AMReX are developed by the center
+of computational science and Engineering, LBNL) which enables us to exploit a
 scalable ``particle container'' class for tracking microscopic seed bubbles
 at the wall.
 
+----------------------------------------------------------------------------
  
-Technology Transition: The proposal lacks technology transition discussion. 
+``Technology Transition: The proposal lacks technology transition discussion.''
+
+Maybe this is where we discuss our proposed ``Fluent like'' input module?
+
+---------------------------------------------------------------------------
 
 
+``Technical Approach: Although the experiments on magnetically 
+levitated droplets and the cryogenic helium flow pipe would be 
+interesting cases to verify a new type of thermo fluid model, 
+they are not representative of the thermal/fluid conditions 
+in a large cryofluid tank in microgravity. These experiments 
+add significant effort to the work plan but do not serve to 
+validate the model for large tanks in microgravity. ''
+
+My intuition tells me that the referees pondered the ``magnetic levitation''
+idea for emulating a microgravity environment for a while, but
+perhaps realized magnetic levitation might be the most promising
+way to emulate weightlessness without
+actually being in outer space or using a drop tower or parabolic flight?
+
+It could be also that the referees were wondering whether one can emulate
+the phenomenon of ``interior capillary flow'' using the levitation idea?
+
+``interior capillary flow'' is a big deal: NASA ran some experiments on it
+on the space station:
+https://www1.grc.nasa.gov/space/iss-research/mwa/cfe-2/
+NASA has a whole repository "PSI": Physical science informatics system.
+https://psi.nasa.gov/home
+
+I attach some papers that should be of interest:
+``Capillary flow in an interior corner'' by Weislogel and Lichter, JFM 1998.
+(microgravity)
 
 
-
-
-Technical Approach: Although the experiments on magnetically levitated droplets and the cryogenic helium flow pipe would be interesting cases to verify a new type of thermo fluid model, they are not representative of the thermal/fluid conditions in a large cryofluid tank in microgravity. These experiments add significant effort to the work plan but do not serve to validate the model for large tanks in microgravity. 
-
+``Front dynamics and fingering of a driven contact line'' by Veretennikov et
+al, JFM 1998.
+(regular gravity)
+------------------------------------------------------------------
