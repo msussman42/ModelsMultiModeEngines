@@ -7,7 +7,7 @@ improvements associated with the coarsest levels cannot be achieved
 over a significant portion of the tank domain.''
 -----------------------------------------------------------------------
 It is agreed that a practical number of adaptive mesh refinement levels
-will still yield a finest resolution level that still necessitates
+might still yield a finest resolution level that still necessitates
 that sub-scale boundary layer models be used.  Our adaptive
 multiphase code already has the following kinds of related
 models implemented:
