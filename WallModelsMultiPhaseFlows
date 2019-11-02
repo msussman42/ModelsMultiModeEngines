@@ -1,0 +1,53 @@
+``There are some concerns regarding the boundary layer flow modeling. 
+Both the need to include subcooled boiling assisted boundary layers 
+without having to model or track specific voids, and the need to avoid 
+small spatial scales near the wall even without bubble formation and 
+collapse, may limit the utility of the proposed approach if the speed 
+improvements associated with the coarsest levels cannot be achieved 
+over a significant portion of the tank domain.''
+
+It is agreed that a practical number of adaptive mesh refinement levels
+will still yield a finest resolution level that still necessitates
+that sub-scale boundary layer models be used.  Our adaptive
+multiphase code already has the following kinds of related
+models implemented:
+
+a. ``A ghost cell method for turbulent compressible viscous flows on
+adaptive Cartesian grids,'' Hu, Zhao, Liu, Procedia Engineering (2013)
+(implementing the ``law-of-the-wall'' model, such as Troshko and Hassan,
+``Law of the wall for two-phase turbulent boundary layers,''
+Intl. J. Heat and Mass Transfer, 2001, on an ``embedded'' boundary grid).
+
+b. ``Direct numerical simulation of bubble dynamics in subcooled 
+and near-saturated convective nucleate boiling,'' Lal, Sato, and Niceno,
+Intl. J. Heat and Fluid Flow, 2015.
+
+c. ``A depletable micro-layer model for nucleate pool boiling,''
+Sato and Niceno, Journal of Computational Physics, 2015.
+
+d. Bicer and Sou
+
+That being said, we have recently developed a very efficient 
+``super-mesh'' algorithm,
+
+``A moment-of-fluid method for diffusion equations on irregular domains
+in multi-material systems,'' Y. Liu, M. Sussman, Y. Lian, M.Y. Hussaini,
+Journal of Computational Physics, Available online 23 October 2019,
+
+which will enable us to effortlessly introduce high aspect ratio supermesh
+elements into the thermal/boundary layer regions of a block structured
+rectangular adaptive mesh refinement grid.  Also, we have recently migrated
+from 2016 BoxLib to 2019 AMReX libraries which enables us to exploit a
+scalable ``particle container'' class for tracking microscopic seed bubbles
+at the wall.
+
+ 
+Technology Transition: The proposal lacks technology transition discussion. 
+
+
+
+
+
+
+Technical Approach: Although the experiments on magnetically levitated droplets and the cryogenic helium flow pipe would be interesting cases to verify a new type of thermo fluid model, they are not representative of the thermal/fluid conditions in a large cryofluid tank in microgravity. These experiments add significant effort to the work plan but do not serve to validate the model for large tanks in microgravity. 
+
