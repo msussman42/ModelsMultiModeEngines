@@ -1,0 +1,844 @@
+--------------------------------------------------------------------
+REVIEWER FORMS
+
+DFG- Priority Program SPP 2171 
+``Dynamic wetting of flexible, adaptive and switchable surfaces''
+
+Reviewer: Mark Sussman
+
+Address: Department of Mathematics, Florida State University,
+         Tallahassee, FL 32306
+
+----------------------------------------------------------------------
+
+1. Aland
+University of Dresden
+
+i. Quality of the project and the preliminary work.
+
+The following preliminary articles are of high quality:
+
+D. Mokbel , H. Abels, S. Aland . A phase field model for fluid structure 
+interaction. J.  Comp. Phys. 372 (2018)
+
+S. Aland , F. Chen. An efficient and energy stable scheme for a 
+phase field model for the moving contact line problem. 
+Int. J. Numer. Meth. Fluids. 81 (2015)
+
+S. Aland, Time integration for diffuse interface models for two-phase 
+flow. J. Comp. Phys.  262 (2014)
+
+The project is of very good quality but I have some questions.
+
+question 1: The FSI algorithm has an Eulerian representation for the structure
+ (I look at JCP 2018 article)?
+ I am worried about whether the numerical solutions share the same 
+ elastic structure reversibility properties as what is seen physically?
+ If the structure solver used a Lagrangian grid, I would not be worried
+ about numerical reversibility properties.
+
+question 2: The 2014 article discusses problems in which there is no merging
+ or rupture of interfaces.  I wonder if the advantages of high order
+ time integration schemes, in which the time step exceeds the characteristic
+ surface tension time scale associated with a given grid size, will be
+ lost for problems with droplet/bubble merging and/or rupture?  
+ The time scales are very fast near rupture, Taylor series 
+ analysis in time will show that the benefits of high order in time
+ schemes will not be realized near rupture/merge of interfaces.
+
+question 3: The proposers do not discuss dynamic contact angle/triple point
+ conditions? In this project, in which there are flexible and switchable
+ surfaces, should not dynamic conditions be studied?  For example, how
+ much force does it take to pull a flexible solid out of a liquid
+ bath with constant velocity?
+
+question 4: The phase field model requires that an interface thickness
+ parameter $\epsilon$ be prescribed.  What is the applicants' strategy
+ for prescribing this parameter?
+
+(ii) qualification of the applicants.  
+
+The applicants' publication record
+and quality of articles published are evidence 
+that the applicant is highly
+qualified to carry out the proposed project.
+
+(iii) objectives and work program.  
+
+The objectives and work program is
+good, but I would have liked to see more planned validation tests
+for dynamic contact angle/triple point problems.  Only by testing the
+dynamic cases can it be determined if the proposers' numerical tools
+properly take into account the atomistic scales (either by model, or
+some kind of multiscale method).
+
+(iv) Scientific Contribution of the project to the main aims of 
+priority program.  
+
+The project will contribute to predicting the motion
+of drops on flexible solids in which the proposed algorithms are
+accurate at scales of size of microns.  It is assumed that somehow
+experimental results and models (experimental or numerical) at the nanoscale
+will be merged with the proposed method.
+
+(v) recommendation: very good.
+
+---------------------------------------------------------------------
+2. Brinkmann
+University of Saarbrucken
+
+i. Quality of the project and the preliminary work.
+
+The following preliminary articles are of high quality:
+
+R. de Ruiter, C. Semprebon, M. van Gorcum, M. H. G. Duits, M Brinkmann, and 
+F. Mugele, ``Stability limits of capillary bridges: how contact angle
+hysteresis affects morphology transitions of liquid microstructures,'' 
+Phys. Rev. Lett. 114: 234501 (2015)
+
+C. Semprebon, C. Herrmann, B-Y Liu, R. Seemann, and M. Brinkmann,
+``Shape Evolution of Droplets Growing on Linear Microgrooves,'' 
+Langmuir 11: 10498-10511 (2018)
+
+The project is of very good quality but I have some questions regarding the
+numerics (the proposed condensation, evaporation, and wicking
+experiments on patterned surfaces seem
+novel and significant to me).
+
+question 1: The long wavelength model assumes that the interface slopes
+have relatively small inclines 
+(see Mahady, Afkhami, Kondic 2016 - note: both initial film thickness
+and resulting droplet heights are on the scale of nm in this article, but
+still the LW approximation had to be abandoned).  
+Is this condition satisfied for the physical problem in question?
+
+question 2: I see very little description of accompanying numerical algorithms
+ for predicting evaporation, condensation, or the interaction between
+ a fluid and flexible/switchable structure.  This catches me by surprise
+ since in the objectives section it says that the experiments would be 
+ accompanied by simulation.  Condensation and Evaporation processes
+ are very difficult to simulate due to not only the wide range of scales
+ needed to resolve for simulating contact line dynamics, but also 
+ the wide range of scales needed to resolve for predicting the rate 
+ of mass transfer near the junction where solid, fluid, vapor meet.  
+ Details of numerics for this?
+
+question 3: I could not find where it was explicitly mentioned at which
+ scales the proposers would focus on? nanometer scale? micron scale? both?
+ How would one bridge the nanometer scale to the micron scale?
+ In the article by de Ruiter et al (2015), it is mentioned that a drop
+ is in contact with a ``millimeter-sized stainless steel sphere \ldots.''
+ In the article by Semprebon et al (2018), the grooved surface had a 
+ period of about 10 microns and only very slow flows were considered. 
+ In both the articles, static equilibrium numerical models, in contrast
+ to dynamic capable models, were considered.  
+
+(ii) qualification of the applicants.  
+
+The applicants' publication record
+and quality of articles published are evidence that 
+the applicant is 
+qualified to carry out the proposed project for the experimental part.
+
+As mentioned previously, 2 of the proposers' recent articles implemented
+algorithms designed for static or slow moving problems, but in order to
+meet the overall objectives of the program, do not the physics of dynamic
+contact line/triple point problems need to be met?
+
+(iii) objectives and work program. 
+The ojectives and work program for the
+experimental part of the proposal are fine, but I could not find enough
+detail in the proposal for me to judge the numerics; will the
+assumptions of the long wave length model be satisfied for the
+contact line dynamic problems tackled by the applicant?
+
+(iv) Scientific Contribution of the project to the main aims of
+priority program.  
+
+The project will contribute experiments for the
+investigation of evaporation, condensation, and wicking 
+into arrays of lamella.
+
+(v) recommendation: good.
+------------------------------------------------------------------
+
+3. Hardt
+University of Darmstadt
+Proposal_HA_2696_46_1.pdf
+
+i. Quality of the project and the preliminary work.
+
+The following preliminary articles are of high quality:
+
+T. Roy, K. Szuttor, J. Smiatek, C. Holm, and S. Hardt. 
+Stretching of surface-tethered polymers in pressure-driven
+flow under confinement. Soft Matter, 13:6189–6196, 2017.
+(5 micron height of channel, comparison of experiments with a hybrid
+MD and LB method)
+
+A. Reusken, X. Xu, and L. Zhang. Finite element methods for a class of 
+continuum models for immiscible flows with moving contact lines. 
+Int. J. Numer. Meth. Fluids, pages 268–291, 2016.
+(Level Set Method, Navier Slip Condition, Scale is unknown, Density
+ratio is 2)
+
+M. A. Olshanskii, A. Reusken, and X. Xu. An Eulerian space-time 
+finite element method for diffusion problems on
+evolving surfaces. SIAM J. Numer. Anal., 52:1354–1377, 2014.
+
+A. Dorr and S. Hardt. Line tension and reduction of apparent 
+contact angle associated with electric double layers.
+Physics of Fluids, 26:082105, 2014.
+(analytical and numerical simulations on the effect of surfactants on the
+shape of a static drop on a substrate)
+
+A. A. Eifert, D. Paulssen, S. Varanakkottu, T. Baier, and S. Hardt. 
+Simple fabrication of robust water-repellent surfaces with low contact-angle 
+hysteresis based on impregnation. Advanced Materials Interfaces, 
+1:1300138, 2014.
+(Advancing and Receding contact angle for different materials 
+impregnated with silicone oil with thickness 2.7 microns? 2.3nm?
+~2 mm radius droplets)
+
+The quality of the projects and of the preliminary work is very good:
+``A main objective of the proposed research will be to achieve a 
+comprehensive understanding of dynamic wetting on LISs. A special 
+focus will be on the role of surfactants.'' Also, the proposers discuss the
+study of electric-field induced displacement of droplets on liquid
+infused surfaces.  
+
+I have two questions:
+question 1: In Figures 6-9, I see schematics illustrating 3 fluid materials
+along with a triple junction: the droplet, oil (infused layer), and surrounding
+fluid.  According to the proposal and also the article by Eifert et al, the
+length scale for the droplet is about 1 mm.  According to the article by
+Eifert et al, the oil layer thickness is about 3 nm thick? Are the
+proposers planning to resolve all the scales from nm to mm?  The required
+grid size and time step constraint must be very stringent in order to
+properly resolve the balance of viscous and surface tension forces at the
+triple point? 
+
+In the article by Mahady, Afkhami, Kondic 2016, they report that both the 
+droplet height and film thickness have magnitudes in the 5-100 nm range 
+in which they have to use AMR to speed up their simulations.  But for this
+proposal, the scales range from nm to mm.  How do the proposers 
+intend to address the wider range of scales?
+
+question 2: The level set method is not a volume preserving interface
+ tracking method.  The volume errors for two material problems already
+ are a problem if one wants to try and compute terminal behavior in
+ deforming boundary problems (why the conservative LS method was developed,
+ or hybrid LS and VOF methods).  Now, the proposers want to solve problems
+ with triple junctions using the LS method.  Why will volume loss over time
+ not be a problem?
+
+(ii) qualification of the applicants.  
+
+The two applicants' publication records
+and quality of articles published (articles on numerical and
+experimental developments) are evidence that 
+the applicants are qualified to carry out the proposed project 
+
+(iii) objectives and work program. 
+
+The objectives and work program are a continuation of the proposers'
+previous work which is very good.  There are some issues regarding
+how to numerically simulate flows containing a triple point using the
+level set method, but the reviewer is optimistic that the proposers will
+figure something out given their track record.
+
+
+(iv) Scientific Contribution of the project to the main aims of
+priority program.  
+
+The proposed work on the effect of surfactants and external electric
+fields on dynamic contact line dynamics on liquid infused surfaces
+address the main aims of the priority program.
+
+(v) recommendation: very good.
+------------------------------------------------------------------
+
+4. Kummer
+University of Darmstadt
+
+i. Quality of the project and the preliminary work.
+
+The following preliminary articles are of high quality:
+
+F. Kummer, ``Extended discontinuous Galerkin methods for two-phase flows: 
+the spatial discretization,'' Int. J. Numer. Methods Eng., 
+vol. 109, no. 2, pp. 259–289, 2017.
+(steady two-phase Taylor Couette flow, density ratio 13, viscosity
+ratio 20)
+
+B. Muller, S. Kramer-Eis, F. Kummer and M. Oberlack, ``A high-order 
+discontinuous Galerkin method for compressible flows with 
+immersed boundaries Int. J. Numer. Methods
+Eng., vol. 110, no. 1, pp. 3-30, 2017.
+(flow past airfoil, flow over bump, cell agglomeration, XDG)
+
+F. Kummer, B. Müller and T. Utz, ``Time integration for extended discontinuous
+Galerkin methods with moving domains,'' Int. J. Numer. Methods Eng., 
+vol. 113, no. 5, pp. 767–788, 2017.
+
+D. Krause and F. Kummer, ``An incompressible immersed boundary solver for 
+moving body flows using a cut cell discontinuous Galerkin method,''
+Computers and Fluids, vol. 153, pp. 118–129, 2017.
+(settling particle, oscillating cylinder, rotating cylinder)
+
+The project is of very good quality but I have some questions.
+
+question 1: Saye has written two more articles that the proposer is not
+ aware of:
+(a) ``Implicit mesh discontinuous Galerkin methods and interfacial
+gauge methods for high-order accurate interface dynamics,
+with applications to surface tension dynamics, rigid body
+fluid–structure interaction, and free surface flow: Part I'' and
+(b) ``Implicit mesh discontinuous Galerkin methods and interfacial
+gauge methods for high-order accurate interface dynamics,
+with applications to surface tension dynamics, rigid body
+fluid–structure interaction, and free surface flow: Part II'', which appeared
+in JCP, 2017.  
+My first question is this: for the problems proposed to be
+numerically simulated, what evidence is there in Saye's Part II article
+that the high order spectral method will give better accuracy per grid
+cell than a low order, sharp interface method?  I ask this question 
+since the higher the order, the worse conditioned the matrix solver? 
+Wouldn't large density ratio problems or FSI problems exacerbate the problem?
+For the DG algorithm, is the matrix system to be inverted symmetric? 
+Can MGPCG be used?  Also, 
+I look at Figure 6 of the proposal, and
+it looks to me that at the points where interfaces first come in contact
+with the flexible substrate, the space 
+and time grid will always be underresolved.  Wouldn't an underresolved
+grid negate any advantage of a high order method?
+
+question 2: The applicant is proposing a DG method with spectral accuracy
+ even in mixed elements.  This means that one will have the flexibility
+ to specify first, second, third, fourth, or higher order in an element. 
+ What is expected to be the optimal order? in space? in time? What about
+ in unmixed elements?
+
+question 3: The level set method is not a volume preserving interface
+ tracking method.  The volume errors for two material problems already
+ are a problem if one wants to try and compute terminal behavior in
+ deforming boundary problems (why the conservative LS method was developed,
+ or hybrid LS and VOF methods).  Now, the proposers want to solve dynamic
+ contact line problems using the LS method.  Why will volume loss over time
+ not be a problem?
+
+(ii) qualification of the applicants.  
+
+The applicants' publication record
+and quality of articles published 
+are evidence that 
+the applicants are qualified to carry 
+out the proposed project 
+
+(iii) objectives and work program.  
+
+The objectives and work program for simulating 3 phase systems with a 
+flexible substrate is good.
+
+(iv) Scientific Contribution of the project to the main aims of 
+priority program.  
+
+The main aims of the priority program will be met, albeit I could not find
+serious discussion addressing the wide range of scales that appear in
+dynamic contact line or dynamic triple point problems.  Considering the
+size and complexity of Saye's papers 1 and 2 (in which contact line dynamics
+or triple point dynamics were not considered), I am worried that the 
+applicants will not finish in 4 years.  More realistically, this is a
+6 year project.
+
+(v) recommendation: Very Good.
+
+
+---------------------------------------------------------------------
+
+5. Lecrivain
+University of Dresden
+
+i. Quality of the project and the preliminary work.
+
+The following preliminary articles are of high quality:
+
+Lecrivain, G., Rayan, R, et al., ``Using quasi-DNS to investigate the 
+deposition of elongated aerosol particles in a wavy channel flow,'' 
+Computers & Fluids 124 (2016), 78-85.
+(fluid is incompressible)
+
+Lecrivain, G., Petrucci, G., et al., ``Attachment of solid elongated 
+particles on the surface of a stationary gas bubble.'' 
+International Journal of Multiphase Flow 71 (2015), 83-93.
+(stationary spherical gas bubble)
+
+Lecrivain, G., Yamamoto, R., et al., ``Direct numerical simulation of 
+a particle attachment to an immersed bubble.'' 
+Physics of Fluids 28 (2016), 083301.
+(spherical particles, phase field method for gas-liquid fluids)
+
+Lecrivain, G., Yamamoto, R., et al., ``Direct numerical simulation 
+of an arbitrarily shaped particle at a fluidic interface.'' 
+Physical Review E 95 (2017), 063107.
+(incompressible fluids, phase field method for gas-liquid interface, dynamic
+contact angle condition? or is flow slow enough or particles small enough 
+that static condition is sufficient?)
+
+Lecrivain, G., Kotani, Y., et al., ``Diffuse interface model to 
+simulate the rise of a fluid droplet across a cloud of particles.'' 
+Physical Review Fluids 3 (2018), 094002.
+(incompressible fluids, phase field method for gas-liquid interface, dynamic
+contact angle condition? or is flow slow enough or particles small enough 
+that static condition is sufficient?)
+
+The project is of good quality but I have some questions.
+
+question 1: The phase field model requires that interface thickness
+ parameter(s) $\epsilon$ be prescribed.  What is the applicants' strategy
+ for prescribing these parameters?
+
+question 2: Do the applicants intend to simulate dynamics of drops on liquid
+ infused surfaces (or drops impacting a flexible substrate) at the nanoscale
+ or micron scale or both? i.e., I could not find much discussion on the
+ applicants strategy for dynamic contact line or dynamic triple point models.
+
+question 3: What are the details of the FSI algorithm used to simulate the
+ problem illustrated in Figure 11 of the proposal?
+
+(ii) qualification of the applicants.  
+
+The applicants' publication record
+and quality of articles published are evidence 
+that the applicant is highly
+qualified to carry out the proposed project.
+
+(iii) objectives and work program.  
+
+The objectives and work program is good.  There are numerous articles
+describing phase field methods for ternary configurations.  It should
+not be too difficult to extend from 2 fluids to 3.  I would have liked
+to see more details for the strategy to assign values to the
+thickness parameter $\epsilon$.  Also I would have liked to see more
+information regarding the proposed FSI algorithm.  I was caught by 
+surprise because Figure 11 shows a drop impacting a flexible elastic substrate,
+but the applicant does not have this item in the list of work programs.
+
+(iv) Scientific Contribution of the project to the main aims of 
+priority program.  
+
+The project has 3 parts which are partially relevant to the program:
+(a) development of a ternary fluid model.
+(b) droplet impact with a fluidic interface
+(c) droplet impact with a hard substrate covered by a thin liquid.
+
+I am surprised that in the work plan section, I did not see much information
+on the details of a dynamic contact line algorithm, or dynamic triple point
+algorithm.
+
+(v) recommendation:  Good.
+
+
+---------------------------------------------------------------------
+
+6. Metzger
+University of Erlangen
+
+i. Quality of the project and the preliminary work.
+
+The following preliminary articles are of high quality:
+
+Stefan Metzger, ``On convergent schemes for two-phase flow of 
+dilute polymeric solutions,'' ESIAM: Mathematical Modelling and Numerical
+Analysis, 52(6), 2357-2408 (2018)
+
+Stefan Metzger, ``On stable, dissipation reducing splitting schemes
+for two-phase flow of electrolyte solutions,'' Numerical Algorithms,
+First Online: 23 April 2018.
+(analysis of diffuse interface model for simulating two fluid flows of
+electrolyte solutions)
+
+G. Grun, S. Metzger, Micro-Macro-Models for Two-Phase Flow of Dilute 
+Polymeric Solutions: Macroscopic Limit, Analysis, and Numerics, 
+Chapter in Transport Processes at Fluidic Interfaces, Springer 
+International Publishing, 2017, 291-304.
+(diffuse-interface model for two-phase flow of incompressible 
+fluids with dissolved noninteracting polymers)
+
+H. Abels, H. Garcke, G. Grün, and S. Metzger, Diffuse interface models 
+for incompressible two-phase flows with different densities, 
+Chapter in Transport Processes at Fluidic
+Interfaces, Springer International Publishing, 2017, 203–229.
+
+G. Grun, F. Guillen-Gonzalez, and S. Metzger, On fully decoupled, 
+convergent schemes for diffuse interface models for two-phase 
+flow with general mass densities, Communications
+in Computational Physics 19, (2016), no. 5, 1473-1502.
+(diffuse interface model, drop sliding down slope, contact angle hysteresis
+capable model?, density ratio 10 to 1, macroscopic contact angle)
+
+S. Metzger, On numerical schemes for phase-field models for electrowetting 
+with electrolyte solutions, Proceedings in Applied Mathematics and 
+Mechanics 15 (2015), no. 1, 715-718.
+(drop on surface, break-up of electrolyte droplet in an electric field, 
+density and viscosity ratios are one)
+
+The project is of good quality but I have some questions.
+
+question 1: How is the applicant going to use the information from
+ the lubrication approximation analysis in order to resolve the
+ ``contact line singularity'' for a macro-scale model if the apparent
+ angle is greater than, say, 90 degrees?  This point was
+ not made clear to me in the proposal.  For example, in typical
+ dynamic contact line models (at the scale of microns), 
+ practitioners prescribe an ``effective'' 
+ contact angle (and a slip condition) that depends on the tangential 
+ velocity near the wall.  
+ (see Figures 28 and 30 of Bonn et al, ``Wetting and Spreading'' (2009),
+  or Figure 14 of Cantat, ``Liquid meniscus friction on a wet plate:
+  Bubbles, lamellae, and foams'' (2013), or Figure 3 (illustration
+  of the wide range of scales) of
+  Dupont and Legendre, ``Numerical simulation of static and sliding 
+  drop with contact angle hysteresis'' (2010),
+  or Figure 7 of ``Sliding of Liquid Drops Down an Inclined Solid Surface''
+  (2002)).
+
+question 3: Phase field (diffuse interface)
+ models require that an interface thickness
+ parameter $\epsilon$ be prescribed.  What is the applicants' strategy
+ for prescribing this parameter?
+
+(ii) qualification of the applicants.  
+
+The applicants' publication record
+and quality of articles published are evidence 
+that the applicant is 
+qualified to carry out the proposed project.
+
+(iii) objectives and work program.  
+
+The applicant correctly points out in the proposal that one cannot possibly
+simulate all the appropriate scales (from the nanometer scale to the 
+micron scale) with a single monolithic method.  Also, it is agreed that
+if one were to develop a single ``monolithic'' method, the method would
+not only have to resolve the wide range of spatial scales, but also must
+take very small time steps.
+
+What the referee does not see in the work program though, is a viable
+strategy for using information derived at the small scales in order
+to parameterize an algorithm designed for the ``macro'' scale.
+
+(iv) Scientific Contribution of the project to the main aims of 
+priority program.  
+
+The study of the multiscale aspects of dynamic contact angle conditions and
+the effect of an electric field address the priority program.  I could not
+find a plan for predicting drop motion on a flexible substrate.
+
+(v) recommendation: Good
+
+
+---------------------------------------------------------------------
+
+7. Nair
+University of Erlangen
+
+i. Quality of the project and the preliminary work.
+
+The following preliminary articles are of high quality:
+
+M. Blank, P. Nair, and T. Poschel. ``Capillary viscous flow and melting 
+dynamics: Coupled simulations for additive manufacturing applications.'' 
+International Journal of Heat and Mass Transfer, 131 (2019), 1232-1246.
+(SPH for the melting of a single object or a group of consecutive objects)
+
+P. Nair and T. Poschel. ``Dynamic capillary phenomena using Incompressible
+SPH.'' Chemical Engineering Science 176 (2018), pp. 192–204.
+(SPH for capillary tube (.5 mm diameter) or liquid bridge (50 micron drop
+diameter))
+
+P. Nair and G. Tomar. ``A study of energy transfer during water entry of 
+solids using incompressible SPH simulations.'' 
+Sadhana 42.4 (2017), pp. 517–531.
+(SPH for 1in 1.6 m/s solid sphere falling in water)
+
+P. Nair and G. Tomar. ``Volume conservation issues in incompressible 
+smoothed particle hydrodynamics.'' J Comp. Phys. 297 (2015), pp. 689–699.
+(algorithm for improving volume preserving characteristics of an SPH method)
+
+It is proposed to simulate contact line dynamics for drops on (flexible)
+high aspect ratio microstructures.  The project is original and can be
+significant.  Also, the project addresses the main themes of the priority
+program.  I have the following questions:
+
+question 1: In previous work by the applicant, the scales addressed were
+ on the order of microns and then some kind of model (either implicitly or
+ explicitly intended) must have been put into place in order to simulate
+ the interaction between the nanoscale and the micron scale.  For this
+ proposal, at which scales will computations take place?  Or will the 
+ applicant attempt to resolve all the scales from the nanoscale to the 
+ micronscale?
+
+question 2: The article by Nair and Tomar (JCP, 2015) improves the 
+ volume preservation properties of their SPH algorithm, but does not
+ remove the volume error.  Will volume conservation be a problem for 
+ the proposed project? (it is not addressed in the proposal)
+
+
+(ii) qualification of the applicants.  
+
+The applicants' publication record
+and quality of articles published are evidence 
+that the applicant is 
+qualified to carry out the proposed project.
+
+
+(iii) objectives and work program.  
+
+Overall, I really like the objectives and work program.  I have never
+seen a nice validated simulation of contact line dynamics on flexible
+hairs (flexible pillars) as proposed here.  I would have liked to see 
+a better, more realistic, explanation of which scales will be resolved 
+and which will be modeled.
+
+(iv) Scientific Contribution of the project to the main aims of 
+priority program.  
+
+The project directly addresses the main themes of the priority program.
+This is the only project from my batch that addresses the problem
+of contact line dynamics on hairs (flexible micropillars)
+
+(v) recommendation:  Outstanding.
+
+----------------------------------------------------------------------
+
+8. Peschka
+University of Berlin
+
+i. Quality of the project and the preliminary work.
+
+The following preliminary articles are of high quality:
+
+S. Jachalski, D. Peschka, A. Munch, and B. Wagner, ``Impact of interfacial 
+slip on the stability of liquid two-layer polymer films,'' 
+J. Eng. Math., vol. 86, 2014.
+(z=h1(t,x) and z=h2(t,x) delineate the layers)
+(note, this kind of problem has been addressed using VOF which does not
+ make a thin film approximation: 
+ Afkhami and Kondic (2015) ``On the dewetting of liquefied metal 
+ nanostructures)
+
+R. Huth, S. Jachalski, G. Kitavtsev, and D. Peschka, ``Gradient flow 
+perspective on thin-film bilayer flows,'' J. Eng. Math., vol. 94, 2015.
+(z=h1(t,x) thickness of liquid substrate, z=h(t,x) thickness of the 
+liquid film)
+
+D. Peschka, ``Variational approach to contact line dynamics for 
+thin films,'' Physics of Fluids, volume 30, 082115 (2018)
+(thin film (lubrication) model, Figure 3, 60 degrees)
+(assumed that vertical scale much smaller than the horizontal)
+(approximation still valid at the contact line?)
+(why not do hybrid VOF and lubrication theory model?)
+
+S. Jachalski, R. Huth, G. Kitavtsev, D. Peschka, and B. Wagner, 
+``Stationary solutions of liquid two-layer thin-film models,'' 
+SIAM J. on Appl. Math., vol. 73(3), 1183-1202 (2013).
+(3 height functions, $h_1$, $h_{\ast}$, and $h_2$, opening angle(s) are
+small))
+
+It is proposed to further develop the applicants' algorithms for simulating 
+moving contact line dynamics.  It is proposed to improve the modeling
+of hysteretic behavior, include the effects of surfactant transport, and
+include the effects of an elastic/deformable substrate.  Also, in order
+to improve the resolution of the contact line, it is proposed to develop
+a high order interface-tracking ALE method.  
+
+question 1:
+The applicant will be improving algorithms that use the thin-film/long 
+wave approximation.   Thin film approximations, while being very efficient,
+are only designed for problems with relatively small static angles.  
+What if the static angle is near or greater than 90 degrees?
+
+question 2:
+How will one use the results from the proposed work in order to improve
+the modeling of contact line dynamics at the micron sized scales?
+
+
+(ii) qualification of the applicants.  
+
+The applicants' publication record
+and quality of articles published are evidence 
+that the applicant is qualified to carry out 
+the proposed project.
+
+(iii) objectives and work program.  
+
+The objectives and work program are ok, except that I could not find
+how one can use the proposed research to bridge scales from the
+nano-scale to micron sized scales.  Also, the priority program description
+included phenomena such as contact line dynamics on a bed of flexible
+hairs, but are conventional thin-film/long wavelength models
+appropriate for such a problem?
+
+(iv) Scientific Contribution of the project to the main aims of 
+priority program.  
+
+It is proposed to improve the long wave approximation for modeling
+contact line hysterisis and including the effects of surfactant 
+transport.  These topics address the aims of the priority program.  
+I could not find in the proposal a sufficient description of 
+new developments that would address the cases in which 
+the assumptions of the long wave/thin film approximations were
+not met.
+
+Also I could not find in the proposal a sufficient
+description of new developments for the interaction of a flexible 
+substrate with a deforming (sliding) drop.
+
+(v) recommendation: Good.
+
+----------------------------------------------------------------------
+
+9. Thiele
+University of Munster
+
+i. Quality of the project and the preliminary work.
+
+The following preliminary articles are of high quality:
+
+[A1] U. Thiele. Patterned deposition at moving contact line. 
+Adv. Colloid Interface Sci., 206:399–413, 2014.
+
+[A2] U. Thiele. Recent advances in and future challenges for 
+mesoscopic hydrodynamic modelling of complex wetting. 
+Colloids Surf. A, 553:487–495, 2018.
+
+[A3] U. Thiele, D. V. Todorova, and H. Lopez. Gradient dynamics 
+description for films of mixtures and suspensions: Dewetting 
+triggered by coupled film height and concentration fluctuations. 
+Phys.  Rev. Lett., 111:117801, 2013.
+(analyze stability of thin liquid films using thin film model)
+
+[A4] U. Thiele, A. Archer, and L. Pismen. Gradient dynamics models 
+for liquid films with soluble surfactant. Phys. Rev. Fluids, 1:083903, 2016.
+
+[A5] S. Engelnkemper, M. Wilczek, S. V. Gurevich, and U. Thiele. 
+Morphological transitions of sliding drops - dynamics and bifurcations. 
+Phys. Rev. Fluids, 1:073901, 2016.
+
+[A6] M. Wilczek, W. Tewes, S. Engelnkemper, S. V. Gurevich, and U. Thiele. 
+Sliding drops - ensemble statistics from single drop bifurcations. 
+Phys. Rev. Lett., 119:204501, 2017.
+(ensembles and coarsening of interacting drops sliding down inclined plane)
+
+[A7] S. Trinschek, K. John, S. Lecuyer, and U. Thiele. Continuous vs. 
+arrested spreading of biofilms at solid-gas interfaces - the role of 
+surface forces. Phys. Rev. Lett., 119:078003, 2017.
+
+[A8] U. Thiele, J. Snoeijer, S. Trinschek, and K. John. Equilibrium 
+contact angle and adsorption layer properties with surfactants. 
+Langmuir, 34:7210–7221, 2018.
+
+[A9] X. Xu, U. Thiele, and T. Qian. A variational approach to thin 
+film hydrodynamics of binary mixtures. J. Phys.: Condens. Matter, 
+27:085005, 2015.
+
+[A10] H. Yin, D. Sibley, U. Thiele, and A. Archer. Films, layers and 
+droplets: The effect of near-wall fluid structure on spreading dynamics. 
+Phys. Rev. E, 95:023104, 2017.
+
+[46] A. von Borries Lopes, U. Thiele, and A. Hazel. On the multiple 
+solutions of coating and rimming flows on rotating cylinders. 
+J. Fluid Mech., 835:540–574, 2018.
+
+A. P. Hughes, U. Thiele, and A. J. Archer.  Liquid drops on a 
+surface: Using density functional theory to calculate the binding
+potential and drop profiles and comparing with results from 
+mesoscopic modelling.  J. Chem. Phys., 142:074702, 2015.
+
+A. P. Hughes, U. Thiele, and A. J. Archer. Influence of the fluid 
+structure on the binding potential: Comparing liquid drop profiles from 
+density functional theory with results from mesoscopic
+theory. J. Chem. Phys., 146:064705, 2017.
+
+
+As the applicant says, ``In this project we aim at developing and 
+employing a set of generic mesoscopic continuum models
+for the (de)wetting dynamics of liquids on substrates with 
+adaptive topography and wettability.'' The strategy of the applicant
+is to use the thin film/long wave approximation in order to 
+meet the proposed objectives.  The thin film approximation
+is efficient, and has allowed the applicant to carry out
+numerical studies that could not otherwise be practically
+simulated.  For example, the applicant used the thin film approximation
+to efficiently simulate contact line dynamics for an ensemble
+of droplets (see [A6]) and in another article, the applicant used
+the thin film approximation when performing a thorough parameter
+sensitivity study (stability analysis) for a thin film breaking
+up into droplets (see [A3]).
+
+The thin film approximation has drawbacks though and the proposer 
+acknowledges these drawbacks:
+``Often, experiments are performed for material combinations that
+result in contact angles that are not small. In contrast, standard
+asymptotic thin-film models are only strictly valid at small angles.
+Nevertheless, often they show quite good agreement with
+experiments/simulations at moderate angles. Within the gradient
+dynamics approach, this can sometimes be strongly improved by
+employing better approximations for the energy functional
+(e.g., `full curvature trick') while keeping the mobilities of
+the asymptotic model (see, e.g., [46] and discussion in [A2]).''
+
+The reviewer notes that in previous articles by the applicant
+(Hughes, Thiele, Archer, 2015 and Hughes, Thiele, Archer 2017),
+it was found that for predicting static contact angle
+conditions, up to 90 degrees, the ``mesoscopic'' thin film
+model agrees with density functional theory predictions.
+
+I like this proposal, but I would have liked it better if the applicant
+had also proposed some kind of novel hybrid method that used the long
+wave approximation away from contact lines, and then somehow transitioned
+to either a Level Set, SPH, phase field, volume-of-fluid, or 
+Lattice Boltzmann at the contact line (taking into account
+forces at the atomistic scale - as was done by Mahady et al).  
+A comparison between a purely
+thin-film approximation and a hybrid
+approach would have been interesting.  Also, I am worried about how
+realistic modeling the ``polymer brush'' (which is meant to sit on
+top of a solid substrate) by way of an order parameter
+field $\psi(x,t)$ (WP 1.1) will be.   I would have liked to have also
+seen a non-field-based approach proposed 
+for modeling the flexible micro pillars.
+
+(ii) qualification of the applicants.  
+
+The applicants' publication record
+and quality of articles published are evidence 
+that the applicant is qualified to carry out 
+the proposed project.
+
+(iii) objectives and work program.  
+
+The objectives and work program is ok, except that I could not find
+how one can use the proposed research to bridge scales from the
+nano-scale to micron sized scales.  Only briefly, in sections
+WP4.2 and section 2.8, does the applicant discuss 
+how to match the proposed
+``mesoscopic'' approaches with ``macroscopic'' approaches 
+developed by other participants in the priority program.
+
+(iv) Scientific Contribution of the project to the main aims of 
+priority program.  
+
+For applications in which the 
+thin-film hydrodynamic assumptions are met, 
+the proposed research directly addresses the mission of the priority 
+program ``Dynamic wetting of flexible, adaptive, and switchable 
+surfaces.''
+
+(v) recommendation:  very good.
+
+----------------------------------------------------------------------
+
+
+
