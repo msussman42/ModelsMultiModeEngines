@@ -64,15 +64,18 @@ dual time stepping approach (see e.g. A. Jameson and successors, or
 \verb=JSC2019_SEM/KunzETAL2000DualTimeStepping.pdf=) will not
 overcome the problem if the original system is singular.
 
-Instead a ``null space projection'' operation must be developed
+The most robust approach would be to have BOTH dual time stepping
+and a ``null space projection'' operation.  Then the dual time stepping
+approach will converge.
+The ``null space projection'' operation must be developed
 for all levels at or below level zero and must be developed for the
 original AMR hierarchy.  Some important notes:
 \begin{itemize}
 \item a ``singular patch'' is an incompressible patch surrounded
-  by faces with coefficient zero.   There are no singular patches
+  by faces with (original) coefficient zero.   There are no singular patches
   for thermal, species, or velocity diffusion.
 \item The GMRES method will fail without modification for singular problems.
- Implement BFGMRES using knowledge of the null space.
+ Implement BFGMRES.
 \end{itemize}
 
 
