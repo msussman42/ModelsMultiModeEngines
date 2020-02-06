@@ -1,0 +1,83 @@
+%% get rid of autoindent   :setl noai nocin nosi inde=
+\documentstyle{article}
+
+\usepackage{graphicx}
+
+\usepackage{exscale,times}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+% bold math package 
+\usepackage{bm}
+
+
+\newcommand{\bmomega}{\mbox{\boldmath $\omega$\unboldmath}}
+\newcommand{\bmupsilon}{\mbox{\boldmath $\upsilon$\unboldmath}}
+\newcommand{\bmp}{\mbox{\boldmath $p$\unboldmath}}
+\newcommand{\bmC}{\mbox{\boldmath $C$\unboldmath}}
+\newcommand{\bmr}{\mbox{\boldmath $r$\unboldmath}}
+\newcommand{\bms}{\mbox{\boldmath $s$\unboldmath}}
+\newcommand{\bmg}{\mbox{\boldmath $g$\unboldmath}}
+\newcommand{\bmq}{\mbox{\boldmath $q$\unboldmath}}
+\newcommand{\bmU}{\mbox{\boldmath $U$\unboldmath}}
+\newcommand{\bmu}{\mbox{\boldmath $u$\unboldmath}}
+\newcommand{\bmm}{\mbox{\boldmath $m$\unboldmath}}
+\newcommand{\bmj}{\mbox{\boldmath $j$\unboldmath}}
+\newcommand{\bmk}{\mbox{\boldmath $k$\unboldmath}}
+\newcommand{\bmX}{\mbox{\boldmath $X$\unboldmath}}
+\newcommand{\bma}{\mbox{\boldmath $a$\unboldmath}}
+\newcommand{\bmv}{\mbox{\boldmath $v$\unboldmath}}
+\newcommand{\bmx}{\mbox{\boldmath $x$\unboldmath}}
+\newcommand{\bmy}{\mbox{\boldmath $y$\unboldmath}}
+\newcommand{\bmn}{\mbox{\boldmath $n$\unboldmath}}
+\newcommand{\bmN}{\mbox{\boldmath $N$\unboldmath}}
+\newcommand{\bmf}{\mbox{\boldmath $f$\unboldmath}}
+\newcommand{\bmF}{\mbox{\boldmath $F$\unboldmath}}
+\newcommand{\bmS}{\mbox{\boldmath $S$\unboldmath}}
+\newcommand{\bmG}{\mbox{\boldmath $G$\unboldmath}}
+\newcommand{\bmV}{\mbox{\boldmath $V$\unboldmath}}
+\newcommand{\bmI}{\mbox{\boldmath $I$\unboldmath}}
+\newcommand{\bmD}{\mbox{\boldmath $D$\unboldmath}}
+\newcommand{\bmdC}{\mbox{\boldmath $dC$\unboldmath}}
+\newcommand{\bmdq}{\mbox{\boldmath $dq$\unboldmath}}
+\newcommand{\bmL}{\mbox{\boldmath $L$\unboldmath}}
+\newcommand{\bmOmega}{\mbox{\boldmath $\Omega$\unboldmath}}
+\newcommand{\bmphi}{\mbox{\boldmath $\phi$\unboldmath}}
+\newcommand{\bmnu}{\mbox{\boldmath $\nu$\unboldmath}}
+
+\newcommand{\DOP}{\mbox{\boldmath $\cal D$\unboldmath}}
+\newcommand{\GOP}{\mbox{\boldmath $\cal G$\unboldmath}}
+
+\begin{document}
+
+Nested MG-GMRES preconditioned BICGSTAB method for possibly 
+singular, non-symmetric, elliptic systems:
+\begin{eqnarray}
+V_{\bmi} (\alpha_{1} \bmp_{\bmi} - (\DOP \beta \GOP \bmp)_{\bmi}) = 
+V_{\bmi} ( -\alpha_{2} \DOP \bmu^{\ast} )_{\bmi} + \bmF_{\bmi}
+\label{preseqn}
+\end{eqnarray}
+Since $\beta$ can be zero, this implies that (\ref{preseqn}) can
+have no solutions, or perhaps infinitely many solutions.  A
+dual time stepping approach (see e.g. A. Jameson and successors, or
+\verb=JSC2019_SEM/KunzETAL2000DualTimeStepping.pdf=) will not
+overcome the problem if the original system is singular.
+
+The most robust approach would be to have BOTH dual time stepping
+and a ``null space projection'' operation.  Then the dual time stepping
+approach will converge.
+The ``null space projection'' operation must be developed
+for all levels at or below level zero and must be developed for the
+original AMR hierarchy.  Some important notes:
+\begin{itemize}
+\item a ``singular patch'' is an incompressible patch surrounded
+  by faces with (original) coefficient zero.   There are no singular patches
+  for thermal, species, or velocity diffusion.
+\item The GMRES method will fail without modification for singular problems.
+ Implement BFGMRES.
+\end{itemize}
+
+
+\end{document}
+
